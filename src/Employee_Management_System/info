@@ -1,0 +1,154 @@
+
+    Author : Rahul Adkar
+    version : 1.0
+
+********************************** EMPLOYEE MANAGEMENT SYSTEM **********************************
+
+    ---------------- Description ------------
+
+    - An Employee Management System is designed to handle various tasks related to managing employees in an organization.
+    This includes managing employee details, departments, and payroll.
+
+    ---------------- Key Features ------------
+
+    Employee Management: Add, update, and remove employee details.
+
+    Department Management: Manage different departments within the organization.
+
+    Payroll Management: Calculate and manage employee salaries.
+
+    ---------------- Detailed Requirements -----------
+
+    # Classes and Objects
+
+    * Company: Represents the company.
+        Fields: name, address
+        Methods: addDepartment, removeDepartment, listDepartments
+
+    * Department: Represents a department within the company.
+        Fields: name, employees (list of Employee objects)
+        Methods: addEmployee, removeEmployee, listEmployees
+
+    * Employee: Represents an employee.
+        Fields: id, name, address, salary, department (reference to Department)
+        Methods: calculateSalary
+
+    * Payroll: Manages payroll operations.
+        Fields: employee (reference to Employee), monthlySalary
+        Methods: generatePayslip
+
+    ---------------- Encapsulation -------------
+
+    Use private fields for all class attributes.
+    Provide public getter and setter methods for accessing and modifying these fields.
+
+    ---------------- Inheritance ---------------
+
+    FullTimeEmployee: Extends the Employee class, adding specific attributes and behaviors for full-time
+    employees (e.g., annual salary, benefits).
+    PartTimeEmployee: Extends the Employee class, adding specific attributes and behaviors for part-time
+    employees (e.g., hourly rate, hours worked).
+
+    ----------------- Polymorphism ---------------
+
+    Implement method overriding for calculating salary. For example, FullTimeEmployee might have a different
+    method of calculating salary compared to PartTimeEmployee.
+
+    ----------------- Abstraction ----------------
+
+    Use interfaces or abstract classes for common operations. For example, create an IEmployee interface with
+     methods like calculateSalary, getDetails.
+
+
+    ==================== UML Diagram =================
+
+    Below is a simplified UML diagram for the Employee Management System:
+
+
+    |-------------------------------------------------------|
+    |                         Company                       |
+    |-------------------------------------------------------|
+    | - name: String                                        |
+    | - address: String                                     |
+    |-------------------------------------------------------|
+    | + addDepartment(department: Department): void         |
+    | + removeDepartment(department: Department): void      |
+    | + listDepartments(): List<Department>                 |
+    |-------------------------------------------------------|
+
+    |-------------------------------------------------------|
+    |                      Department                       |
+    |-------------------------------------------------------|
+    | - name: String                                        |
+    | - employees: List<Employee>                           |
+    |-------------------------------------------------------|
+    | + addEmployee(employee: Employee): void               |
+    | + removeEmployee(employee: Employee): void            |
+    | + listEmployees(): List<Employee>                     |
+    |-------------------------------------------------------|
+
+    |-------------------------------------------------------|
+    |                        Employee                       |
+    |-------------------------------------------------------|
+    | - id: int                                             |
+    | - name: String                                        |
+    | - address: String                                     |
+    | - salary: double                                      |
+    | - department: Department                              |
+    |-------------------------------------------------------|
+    | + calculateSalary(): double                           |
+    |-------------------------------------------------------|
+
+    |-------------------------------------------------------|
+    |                     Payroll                           |
+    |-------------------------------------------------------|
+    | - employee: Employee                                  |
+    | - monthlySalary: double                               |
+    |-------------------------------------------------------|
+    | + generatePayslip(): void                             |
+    |-------------------------------------------------------|
+
+    |-------------------------------------------------------|
+    |                 FullTimeEmployee (extends Employee)   |
+    |-------------------------------------------------------|
+    | - annualSalary: double                                |
+    | - benefits: String                                    |
+    |-------------------------------------------------------|
+    | + calculateSalary(): double                           |
+    |-------------------------------------------------------|
+
+    |-------------------------------------------------------|
+    |                 PartTimeEmployee (extends Employee)   |
+    |-------------------------------------------------------|
+    | - hourlyRate: double                                  |
+    | - hoursWorked: double                                 |
+    |-------------------------------------------------------|
+    | + calculateSalary(): double                           |
+    |-------------------------------------------------------|
+
+
+    ======================== Implementation Plan ===========================
+
+    Design the Classes: Define the classes and their relationships as per the UML diagram.
+
+    Implement Encapsulation: Make fields private and provide public getter and setter methods.
+
+    Set Up Inheritance: Create subclasses FullTimeEmployee and PartTimeEmployee that extend Employee.
+
+    Implement Polymorphism: Override the calculateSalary method in subclasses.
+
+    Abstract Common Operations: Use interfaces or abstract classes for common employee operations.
+
+    Build and Test: Write the main application logic to add, remove, and list employees and departments.
+    Implement payroll calculations and generate payslips. Write test cases to verify the functionality.
+
+    ========================= Example Scenarios ============================
+
+    Add Department: The company adds a new department "IT".
+    Add Employee: Add a new full-time employee "John Doe" to the "IT" department.
+    Calculate Salary: Calculate the salary for "John Doe".
+    Generate Payslip: Generate a payslip for "John Doe".
+
+
+    - By implementing these features and following the UML diagram, you will gain a solid understanding of
+    OOP concepts in Java.
